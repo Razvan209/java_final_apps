@@ -1,0 +1,113 @@
+<mat-drawer-container class="drawer-container" autosize>
+  <mat-drawer #drawer class="drawer-sidenav" mode="side">
+
+    <div class="div-logo">
+      <img class="img-logo"
+           [src]="appConfig.getAppLogo()"/>
+    </div>
+    <mat-card class="card-menu-button">
+      <mat-card-content>
+        <p>{{ appConfig.getAppOwner() }}</p>
+      </mat-card-content>
+    </mat-card>
+    <mat-card class="card-menu-button" *ngIf="isUserAdmin()" (click)="onDashboard()">
+      <mat-card-content>
+        <p>Dashboard</p>
+      </mat-card-content>
+    </mat-card>
+    <mat-card class="card-menu-button" (click)="onLogOut()">
+      <mat-card-content>
+        <p>Logout</p>
+      </mat-card-content>
+    </mat-card>
+  </mat-drawer>
+
+  <div class="drawer-sidenav-content">
+    <mat-toolbar color="primary">
+      <button mat-icon-button class="example-icon" (click)="drawer.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span>{{ appConfig.getAppName() }}</span>
+      <span class="example-spacer"></span>
+      <app-cart-button></app-cart-button>
+    </mat-toolbar>
+
+    <img class="img-banner"
+         src="https://static.vecteezy.com/system/resources/previews/000/702/015/original/online-digital-library-education-vector.jpg"/>
+    <img class="img-banner"
+         src="https://i.pinimg.com/originals/ed/ab/c0/edabc0a3ce367a83494a1f28f42a4d9e.jpg"/>
+    <img class="img-banner"
+         src="https://www.rontar.com/blog/wp-content/uploads/2024/05/bookstore-name-ideas.jpg"/>
+
+    <mat-card class="card-about-us">
+      <mat-card-title class="title-about-us">Welcome to {{ appConfig.getAppName() }}</mat-card-title>
+      <mat-card-content>
+
+        <div class="div-text">
+          <p>
+            An online library is a virtual archive of electronic resources accessible over the internet.
+            It typically includes a diverse collection of materials such as eBooks, academic papers, journals,
+            databases, multimedia content, and archival documents. Online libraries provide users with the
+            ability to search, access, and use these resources remotely, often featuring advanced search
+            functionalities, personalized recommendations, and interactive features for reading and research.
+            They cater to a wide range of users, from students and academics to professionals and the general public,
+            offering convenient and continuous access to a wealth of information and knowledge.
+            <br><br>
+            The library is more than just a repository of books; it’s a cornerstone of our community.
+            By visiting our library, you gain access to a wealth of resources, expert assistance,
+            and a supportive environment for learning and growth. Whether you’re a student,
+            a professional, or a lifelong learner, our library has something to offer you.
+            Come to our library and discover all the ways we can help you achieve your goals and enrich your life.
+            <br><br>
+            Why Buy Books Online?
+            <br><br>
+            In today's digital age, buying books online has become a popular and convenient way to access
+            literature and educational materials.
+          </p>
+          <img class="img-section"
+               src="https://c8.alamy.com/comp/2FX83M8/online-library-vector-flat-illustration-people-sitting-near-smartphone-display-with-library-app-and-preparing-for-exams-working-and-reading-books-online-education-electronic-books-concept-2FX83M8.jpg"/>
+        </div>
+      </mat-card-content>
+    </mat-card>
+
+    <mat-card class="card-about-us">
+      <mat-card-title class="title-about-us">Impeccable Service</mat-card-title>
+      <mat-card-content>
+        <div class="div-text">
+          <img class="img-section" style="margin-left: 0px !important; margin-right: 16px"
+               src="https://img.freepik.com/premium-photo/electronic-books-online-knowledge-base-internet-digital-library-e-library_662214-215678.jpg">
+
+          <p>
+            Home Delivery: Once you've placed your order, books are delivered directly to your doorstep.
+            This saves you time and eliminates the need to travel to a physical store.
+            Fast Shipping: Many online retailers offer fast and reliable shipping options, including free shipping
+            on qualifying orders. You can often choose expedited shipping if you need a book quickly.
+
+            Secure Payment Options: Your security is our top priority. That's why we offer a range of secure payment
+            options to choose from, including credit/debit cards, PayPal, and more. Rest assured that your personal and
+            financial information is safe with us.
+            <br><br>
+            Buying a book online offers a convenient, extensive, and often more cost-effective way to shop for books.
+            Whether you're looking for a specific title, exploring new genres, or searching for a gift,
+            our library provide a seamless and enjoyable shopping experience that can enhance your reading journey.
+            
+            Dedicated Customer Support: Have a question or need assistance? Our friendly customer support team is here
+            to help. Reach out to us via email, phone, or live chat, and we'll promptly address your concerns and
+            provide personalized assistance.
+
+            <br><br>
+            Start Shopping Now: Dive into our diverse collection and experience the convenience of online shopping like
+            never before. Whether you're treating yourself or searching for the perfect gift, {{appConfig.getAppName()}}
+            is
+            your ultimate destination for all things fabulous. Happy shopping!
+          </p>
+        </div>
+
+      </mat-card-content>
+    </mat-card>
+
+    <app-list-products [isAdmin]="false"></app-list-products>
+  </div>
+
+</mat-drawer-container>
+
