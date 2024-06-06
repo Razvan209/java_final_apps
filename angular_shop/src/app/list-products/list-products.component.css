@@ -1,5 +1,5 @@
 .card-item{
-  width: 31vw;
+  width: 30vw;
   margin: 16px;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
@@ -34,7 +34,7 @@
 .p-description{
   font-size: 14px;
   font-style: italic;
-  height: 50px;
+  height: 30px;
   text-overflow: ellipsis;
   overflow: hidden;
 }

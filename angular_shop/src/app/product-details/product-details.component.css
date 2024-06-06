@@ -68,7 +68,8 @@
 }
 .image{
   width: 24vw;
-  object-fit: cover;
+  height: 350px;
+  object-fit: fill;
   border-radius: 10px;
   margin-right: 16px;
 }
